@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="BTN_scroll" transform="translate(24 24) rotate(90)">
+    <rect id="Rectangle" width="24" height="24" transform="translate(-24)" fill="none"/>
+    <g id="BTN_more" transform="translate(-4.369 5.143)">
+      <path id="Path_8" data-name="Path 8" d="M0,.462H-14.769" transform="translate(-0.923 6.396)" fill="none" stroke="#000" stroke-width="2"/>
+      <path id="Path" d="M-6.857,0,0,6.857l-6.857,6.857" fill="none" stroke="#000" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

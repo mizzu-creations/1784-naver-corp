@@ -1,0 +1,197 @@
+// // NaverBD
+// @font-face {
+//   font-family: 'NaverBD';
+//   src: url('/assets/fonts/NaverBD-Light.eot');
+//   src: url('/assets/fonts/NaverBD-Light.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/NaverBD-Light.woff2') format('woff2'),
+//       url('/assets/fonts/NaverBD-Light.woff') format('woff'),
+//       url('/assets/fonts/NaverBD-Light.ttf') format('truetype');
+//   font-weight: 300;
+// }
+
+// @font-face {
+//   font-family: 'NaverBD';
+//   src: url('/assets/fonts/NaverBD-Regular.eot');
+//   src: url('/assets/fonts/NaverBD-Regular.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/NaverBD-Regular.woff2') format('woff2'),
+//       url('/assets/fonts/NaverBD-Regular.woff') format('woff'),
+//       url('/assets/fonts/NaverBD-Regular.ttf') format('truetype');
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: 'NaverBD';
+//   src: url('/assets/fonts/NaverBD-Bold.eot');
+//   src: url('/assets/fonts/NaverBD-Bold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/NaverBD-Bold.woff2') format('woff2'),
+//       url('/assets/fonts/NaverBD-Bold.woff') format('woff'),
+//       url('/assets/fonts/NaverBD-Bold.ttf') format('truetype');
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: 'NaverBD';
+//   src: url('/assets/fonts/NaverBD-ExtraBold.eot');
+//   src: url('/assets/fonts/NaverBD-ExtraBold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/NaverBD-ExtraBold.woff2') format('woff2'),
+//       url('/assets/fonts/NaverBD-ExtraBold.woff') format('woff'),
+//       url('/assets/fonts/NaverBD-ExtraBold.ttf') format('truetype');
+//   font-weight: 800;
+// }
+
+// @font-face {
+//   font-family: 'NaverBD';
+//   src: url('/assets/fonts/NaverBD-Heavy.eot');
+//   src: url('/assets/fonts/NaverBD-Heavy.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/NaverBD-Heavy.woff2') format('woff2'),
+//       url('/assets/fonts/NaverBD-Heavy.woff') format('woff'),
+//       url('/assets/fonts/NaverBD-Heavy.ttf') format('truetype');
+//   font-weight: 900;
+// }
+
+// // Testbed
+// @font-face {
+//   font-family: 'Testbed';
+//   src: url('/assets/fonts/Testbed-Light.eot');
+//   src: url('/assets/fonts/Testbed-Light.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/Testbed-Light.woff2') format('woff2'),
+//       url('/assets/fonts/Testbed-Light.woff') format('woff');
+//   font-weight: 300;
+// }
+
+// @font-face {
+//   font-family: 'Testbed';
+//   src: url('/assets/fonts/Testbed-Regular.eot');
+//   src: url('/assets/fonts/Testbed-Regular.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/Testbed-Regular.woff2') format('woff2'),
+//       url('/assets/fonts/Testbed-Regular.woff') format('woff');
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: 'Testbed';
+//   src: url('/assets/fonts/Testbed-Bold.eot');
+//   src: url('/assets/fonts/Testbed-Bold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/Testbed-Bold.woff2') format('woff2'),
+//       url('/assets/fonts/Testbed-Bold.woff') format('woff');
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: 'Testbed';
+//   src: url('/assets/fonts/Testbed-ExtraBold.eot');
+//   src: url('/assets/fonts/Testbed-ExtraBold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/Testbed-ExtraBold.woff2') format('woff2'),
+//       url('/assets/fonts/Testbed-ExtraBold.woff') format('woff');
+//   font-weight: 800;
+// }
+
+// @font-face {
+//   font-family: 'Testbed';
+//   src: url('/assets/fonts/Testbed-Heavy.eot');
+//   src: url('/assets/fonts/Testbed-Heavy.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/Testbed-Heavy.woff2') format('woff2'),
+//       url('/assets/fonts/Testbed-Heavy.woff') format('woff');
+//   font-weight: 900;
+// }
+
+// // TestbedALT
+// @font-face {
+//   font-family: 'TestbedALT';
+//   src: url('/assets/fonts/TestbedALT-Light.eot');
+//   src: url('/assets/fonts/TestbedALT-Light.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/TestbedALT-Light.woff2') format('woff2'),
+//       url('/assets/fonts/TestbedALT-Light.woff') format('woff');
+//   font-weight: 300;
+// }
+
+// @font-face {
+//   font-family: 'TestbedALT';
+//   src: url('/assets/fonts/TestbedALT-Regular.eot');
+//   src: url('/assets/fonts/TestbedALT-Regular.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/TestbedALT-Regular.woff2') format('woff2'),
+//       url('/assets/fonts/TestbedALT-Regular.woff') format('woff');
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: 'TestbedALT';
+//   src: url('/assets/fonts/TestbedALT-Bold.eot');
+//   src: url('/assets/fonts/TestbedALT-Bold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/TestbedALT-Bold.woff2') format('woff2'),
+//       url('/assets/fonts/TestbedALT-Bold.woff') format('woff');
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: 'TestbedALT';
+//   src: url('/assets/fonts/TestbedALT-ExtraBold.eot');
+//   src: url('/assets/fonts/TestbedALT-ExtraBold.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/TestbedALT-ExtraBold.woff2') format('woff2'),
+//       url('/assets/fonts/TestbedALT-ExtraBold.woff') format('woff');
+//   font-weight: 800;
+// }
+
+// @font-face {
+//   font-family: 'TestbedALT';
+//   src: url('/assets/fonts/TestbedALT-Heavy.eot');
+//   src: url('/assets/fonts/TestbedALT-Heavy.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/fonts/TestbedALT-Heavy.woff2') format('woff2'),
+//       url('/assets/fonts/TestbedALT-Heavy.woff') format('woff');
+//   font-weight: 900;
+// }
+
+// // NotoSansJP
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 100;
+//   src: url('/assets/fonts/NotoSansJP-Thin.eot');
+//   src: url('/assets/fonts/NotoSansJP-Thin.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Thin.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Thin.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 300;
+//   src: url('/assets/fonts/NotoSansJP-Light.eot');
+//   src: url('/assets/fonts/NotoSansJP-Light.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Light.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Light.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 400;
+//   src: url('/assets/fonts/NotoSansJP-Regular.eot');
+//   src: url('/assets/fonts/NotoSansJP-Regular.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Regular.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Regular.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 500;
+//   src: url('/assets/fonts/NotoSansJP-Medium.eot');
+//   src: url('/assets/fonts/NotoSansJP-Medium.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Medium.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Medium.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 700;
+//   src: url('/assets/fonts/NotoSansJP-Bold.eot');
+//   src: url('/assets/fonts/NotoSansJP-Bold.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Bold.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Bold.woff') format('woff')
+// }
+
+// @font-face {
+//   font-family: 'NotoSansJP';
+//   font-weight: 900;
+//   src: url('/assets/fonts/NotoSansJP-Black.eot');
+//   src: url('/assets/fonts/NotoSansJP-Black.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/NotoSansJP-Black.woff2') format('woff2'),
+//        url('/assets/fonts/NotoSansJP-Black.woff') format('woff');
+// }
