@@ -1,0 +1,15 @@
+#footer {
+  background-color: #000;
+  color: #fff;
+  .inner {
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-menu-list {
+      display: flex;
+    }
+    .copy {
+    }
+  }
+}

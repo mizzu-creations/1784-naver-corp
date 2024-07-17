@@ -1,0 +1,85 @@
+// section intro 영역
+.sc-intro {
+  .sticky {
+    border: 10px solid #0f0;
+    color: #fff;
+    .intro-title {
+    }
+    .intro-logo {
+    }
+    .intro-description {
+    }
+    .intro-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      video {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .scroll-down {
+    }
+  }
+}
+// section innovation 영역
+.sc-innovation {
+  .sticky {
+    border: 10px solid #f0f;
+    color: #fff;
+    .innovation-title {
+    }
+    .innovation-sub-title {
+    }
+    .innovation-desc {
+    }
+    .innovation-building {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
+// slide 영역 (section tech, new normal, eco, with)
+.flex.slide {
+  .sticky {
+    border: 10px solid #00f;
+    display: flex;
+    section {
+      flex-shrink: 0;
+      display: flex;
+      [class*="sequence-"] {
+        display: flex;
+      }
+      .slide-list {
+        display: flex;
+        .slide-item {
+          .slide {
+            time {
+            }
+            .thumb {
+            }
+            .text-box {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// section challenge 영역
+.sc-challenge {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+// section contact 영역
+.sc-contact {
+}

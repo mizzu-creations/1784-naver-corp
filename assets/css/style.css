@@ -1,3 +1,78 @@
+@font-face {
+  font-family: "NaverBD";
+  src: url("/assets/fonts/NaverBD-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "NaverBD";
+  src: url("/assets/fonts/NaverBD-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NaverBD";
+  src: url("/assets/fonts/NaverBD-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "NaverBD";
+  src: url("/assets/fonts/NaverBD-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "NaverBD";
+  src: url("/assets/fonts/NaverBD-Heavy.woff2") format("woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Testbed";
+  src: url("/assets/fonts/Testbed-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Testbed";
+  src: url("/assets/fonts/Testbed-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Testbed";
+  src: url("/assets/fonts/Testbed-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Testbed";
+  src: url("/assets/fonts/Testbed-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Testbed";
+  src: url("/assets/fonts/Testbed-Heavy.woff2") format("woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "TestbedALT";
+  src: url("/assets/fonts/TestbedALT-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "TestbedALT";
+  src: url("/assets/fonts/TestbedALT-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "TestbedALT";
+  src: url("/assets/fonts/TestbedALT-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "TestbedALT";
+  src: url("/assets/fonts/TestbedALT-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "TestbedALT";
+  src: url("/assets/fonts/TestbedALT-Heavy.woff2") format("woff2");
+  font-weight: 900;
+}
 * {
   margin: 0;
   padding: 0;
@@ -60,4 +135,111 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0f0;
+  z-index: 100;
+}
+#header .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#header .inner .header-gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#footer {
+  background-color: #000;
+  color: #fff;
+}
+#footer .inner .footer-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#footer .inner .footer-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sc-intro .sticky {
+  border: 10px solid #0f0;
+  color: #fff;
+}
+.sc-intro .sticky .intro-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.sc-intro .sticky .intro-video video {
+  width: 100%;
+  height: 100%;
+}
+.sc-innovation .sticky {
+  border: 10px solid #f0f;
+  color: #fff;
+}
+.sc-innovation .sticky .innovation-building {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.flex.slide .sticky {
+  border: 10px solid #00f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex.slide .sticky section {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex.slide .sticky section [class*=sequence-] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex.slide .sticky section .slide-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sc-challenge .video-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }/*# sourceMappingURL=style.css.map */
