@@ -2,26 +2,119 @@
 .sc-intro {
   .sticky {
     border: 10px solid #0f0;
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
-    .intro-title {
-    }
-    .intro-logo {
-    }
-    .intro-description {
-    }
-    .intro-video {
+    [class*="sequence-"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: -1;
+      z-index: 20;
+    }
+    .intro-title {
+      visibility: hidden;
+      flex-direction: column;
+      span {
+        display: flex;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: Testbed, sans-serif;
+        font-weight: 800;
+        font-size: 10rem;
+        will-change: transform;
+        &:nth-child(1n) {
+          justify-content: flex-start;
+        }
+        &:nth-child(2n) {
+          justify-content: flex-end;
+        }
+      }
+    }
+    .intro-logo {
+      visibility: hidden;
+      img {
+        max-width: 564px;
+      }
+    }
+    .intro-description {
+      flex-direction: column;
+      font-family: NaverBD, sans-serif;
+      font-weight: 700;
+      .desc {
+        max-width: 564px;
+        margin-bottom: 2.5rem;
+        padding: 0 32px;
+        font-size: 1.5rem;
+        line-height: 1.67;
+        opacity: 0.1;
+      }
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 440px;
+        width: 100%;
+        height: 4rem;
+        padding: 0 1.625rem 0 1.75rem;
+        margin-top: 3.875rem;
+        border: 3px solid #fff;
+        border-radius: 3.25rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 1.25rem;
+        transition: background-color 0.3s ease-in-out;
+        opacity: 0.1;
+        &::after {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          background-image: url(/assets/images/btn-more.svg);
+        }
+      }
+      .link-brand {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+      }
+      .link-story {
+        background-color: #fff;
+        color: #000;
+        &::after {
+          background-image: url(/assets/images/btn-anchor.svg);
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          &::after {
+            background-image: url(/assets/images/btn-more.svg);
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    .intro-video {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      mix-blend-mode: multiply;
       video {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
     }
     .scroll-down {
+      width: 2.5rem;
+      height: 2.5rem;
+      position: absolute;
+      left: 50%;
+      bottom: 1.5rem;
+      transform: translateX(-50%);
     }
   }
 }
