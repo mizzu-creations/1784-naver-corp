@@ -682,7 +682,105 @@ body {
   background: url(/assets/images/icon-arrow-black-pc.svg) no-repeat 50%;
 }
 
+.sc-challenge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20.25rem 3.75rem 21.5rem;
+  border: 10px solid #ff0;
+  height: 100vh;
+  background-color: #fff;
+}
+.sc-challenge .flex {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+  font-weight: 800;
+}
+.sc-challenge .flex .challenge-title {
+  min-width: 300px;
+  font-size: 3.5rem;
+  line-height: 1.21;
+}
+.sc-challenge .flex .challenge-desc {
+  line-height: 1.67;
+  font-size: 1.5rem;
+}
 .sc-challenge .video-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 1.125rem;
+  width: 100%;
+  max-width: 1240px;
+  margin-top: 5.25rem;
+}
+.sc-challenge .video-list .video-item {
+  border-radius: 1rem;
+  -webkit-box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.15);
+          box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.sc-challenge .video-list .video-item a {
+  border-radius: 1rem;
+}
+.sc-challenge .video-list .video-item a .thumb-box {
+  position: relative;
+}
+.sc-challenge .video-list .video-item a .thumb-box::after {
+  content: "";
+  width: 52px;
+  height: 61px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(/assets/images/icon-play.png) no-repeat;
+  background-size: contain;
+}
+.sc-challenge .video-list .video-item a .thumb {
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-challenge .video-list .video-item a .desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.75rem;
+  min-height: 126px;
+  padding: 0 1rem;
+}
+.sc-challenge .video-list .video-item a .desc strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.375rem;
+}
+.sc-challenge .video-list .video-item a .desc span {
+  font-size: 1.0625rem;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
