@@ -1,7 +1,7 @@
 // section intro 영역
 .sc-intro {
   .sticky {
-    border: 10px solid #0f0;
+    // border: 10px solid #0f0;
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     [class*="sequence-"] {
@@ -121,7 +121,7 @@
 // section innovation 영역
 .sc-innovation {
   .sticky {
-    border: 10px solid #f0f;
+    // border: 10px solid #f0f;
     [class*="sequence-"] {
       display: flex;
       justify-content: center;
@@ -200,7 +200,7 @@
 .flex.slide {
   // height: 600vh;
   .sticky {
-    border: 10px solid #00f;
+    // border: 10px solid #00f;
     display: flex;
     align-items: center;
     gap: 18.75rem;
@@ -220,13 +220,13 @@
         line-height: 1.1;
         font-weight: 800;
         font-family: Testbed;
-        border: 10px solid purple;
+        // border: 10px solid purple;
       }
       [class*="sequence-"] {
         display: flex;
         align-items: flex-end;
         // height: 50vh;
-        border: 10px solid red;
+        // border: 10px solid red;
       }
       .group-sequence {
         display: flex;
@@ -420,7 +420,7 @@
   justify-content: center;
   align-items: center;
   padding: 20.25rem 3.75rem 21.5rem;
-  border: 10px solid #ff0;
+  // border: 10px solid #ff0;
   height: 100vh;
   background-color: #fff;
   .flex {
@@ -495,4 +495,51 @@
 }
 // section contact 영역
 .sc-contact {
+  height: 100vh;
+  background-color: #fff;
+  // border: 10px solid red;
+  overflow: hidden;
+  .flex {
+    justify-content: space-between;
+    align-items: center;
+    padding: 52px 100px 48px;
+    .contact-title {
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 1.04;
+      padding: 0 8px 0 0;
+    }
+    .address-naver {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      address {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 72px;
+        font-size: 1.25rem;
+        .building-name {
+          font-weight: 800;
+          line-height: 1.8;
+        }
+        .address {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  .bg-wrap {
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+    .contact-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background: url(/assets/images/contact/pc-img-contact.jpg) no-repeat top /
+        cover;
+    }
+  }
 }

@@ -130,6 +130,7 @@ ul {
 }
 
 body {
+  min-width: 1300px;
   background-color: #000;
   word-break: keep-all;
   font-family: NaverBD;
@@ -158,8 +159,12 @@ body {
 #header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: #0f0;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1)));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   z-index: 100;
 }
 #header .inner {
@@ -169,15 +174,74 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 6.25rem;
+  color: #fff;
+  font-family: Testbed;
+}
+#header .inner .header-logo {
+  padding: 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.78;
 }
 #header .inner .header-gnb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+}
+#header .inner .header-gnb .link-story {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 4.5rem;
+  height: 2.25rem;
+  border: 1px solid #fff;
+  border-radius: 1.125rem;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 0.875rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#header .inner .header-gnb .link-story:hover {
+  background-color: #fff;
+  color: #000;
+}
+#header .inner .header-gnb .select-language {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 800;
+}
+#header .inner .header-gnb .select-language span {
+  margin: 0 0.3125rem 0 0.1875rem;
+}
+#header .inner .header-gnb .select-language svg {
+  fill: #fff;
 }
 
 #footer {
   background-color: #000;
+  z-index: 100;
+}
+#footer .inner {
+  padding: 2rem 6.25rem;
   color: #fff;
 }
 #footer .inner .footer-top {
@@ -187,14 +251,59 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 28px;
+}
+#footer .inner .footer-top .footer-logo a {
+  display: block;
+}
+#footer .inner .footer-top .footer-logo a img {
+  width: 121px;
+}
+#footer .inner .footer-top span {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.42;
 }
 #footer .inner .footer-menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
 }
+#footer .inner .footer-menu-list .menu-item:not(:first-child) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#footer .inner .footer-menu-list .menu-item:not(:first-child)::before {
+  content: "";
+  width: 1px;
+  height: 8px;
+  margin-right: 12px;
+  background: #777;
+}
+#footer .inner .footer-menu-list .menu-item a {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.57;
+  color: #ddd;
+}
+#footer .inner .copy {
+  font-family: TestbedALT;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.57;
+  color: #aaa;
+}
+
 .sc-intro .sticky {
-  border: 10px solid #0f0;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
@@ -337,9 +446,6 @@ body {
           transform: translateX(-50%);
 }
 
-.sc-innovation .sticky {
-  border: 10px solid #f0f;
-}
 .sc-innovation .sticky [class*=sequence-] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -423,7 +529,6 @@ body {
 }
 
 .flex.slide .sticky {
-  border: 10px solid #00f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -455,7 +560,6 @@ body {
   line-height: 1.1;
   font-weight: 800;
   font-family: Testbed;
-  border: 10px solid purple;
 }
 .flex.slide .sticky section [class*=sequence-] {
   display: -webkit-box;
@@ -464,7 +568,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  border: 10px solid red;
 }
 .flex.slide .sticky section .group-sequence {
   display: -webkit-box;
@@ -697,7 +800,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 20.25rem 3.75rem 21.5rem;
-  border: 10px solid #ff0;
   height: 100vh;
   background-color: #fff;
 }
@@ -783,4 +885,67 @@ body {
 .sc-challenge .video-list .video-item a .desc span {
   font-size: 1.0625rem;
   font-weight: 700;
+}
+
+.sc-contact {
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+.sc-contact .flex {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 52px 100px 48px;
+}
+.sc-contact .flex .contact-title {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1.04;
+  padding: 0 8px 0 0;
+}
+.sc-contact .flex .address-naver {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.sc-contact .flex .address-naver address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 72px;
+  font-size: 1.25rem;
+}
+.sc-contact .flex .address-naver address .building-name {
+  font-weight: 800;
+  line-height: 1.8;
+}
+.sc-contact .flex .address-naver address .address {
+  line-height: 1.6;
+}
+.sc-contact .bg-wrap {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+.sc-contact .bg-wrap .contact-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: url(/assets/images/contact/pc-img-contact.jpg) no-repeat top/cover;
 }/*# sourceMappingURL=style.css.map */
