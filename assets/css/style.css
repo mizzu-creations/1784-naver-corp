@@ -339,15 +339,87 @@ body {
 
 .sc-innovation .sticky {
   border: 10px solid #f0f;
-  color: #fff;
 }
-.sc-innovation .sticky .innovation-building {
+.sc-innovation .sticky [class*=sequence-] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  height: 100vh;
+  font-family: NaverBD, sans-serif;
+  color: #fff;
+  z-index: 1;
+}
+.sc-innovation .sticky .innovation-title span {
+  font-weight: 800;
+  font-size: 3.25rem;
+  line-height: 1.44;
+  white-space: nowrap;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+.sc-innovation .sticky .innovation-sub-title {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.sc-innovation .sticky .innovation-sub-title strong {
+  width: 100%;
+  max-width: calc(100% - 4rem);
+  padding: 1.5rem 0;
+  font-size: 6.25rem;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.sc-innovation .sticky .innovation-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  background-color: #000;
+}
+.sc-innovation .sticky .innovation-desc p {
+  max-width: 536px;
+  margin: 0 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.67;
+}
+.sc-innovation .sticky .innovation-building {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  overflow: hidden;
+}
+.sc-innovation .sticky .innovation-building canvas {
+  height: 100vh;
+  background-color: blue;
+}
+.sc-innovation .sticky .innovation-background {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .flex.slide .sticky {
