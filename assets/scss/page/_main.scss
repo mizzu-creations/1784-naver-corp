@@ -120,6 +120,7 @@
 }
 // section innovation 영역
 .sc-innovation {
+  height: 1000vh;
   .sticky {
     // border: 10px solid #f0f;
     [class*="sequence-"] {
@@ -163,7 +164,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      // visibility: hidden;
+      visibility: hidden;
       background-color: #000;
       p {
         max-width: 536px;
@@ -174,7 +175,7 @@
       }
     }
     .innovation-building {
-      visibility: hidden;
+      // visibility: hidden;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -185,7 +186,6 @@
       overflow: hidden;
       canvas {
         height: 100vh;
-        background-color: blue;
       }
     }
     .innovation-background {
