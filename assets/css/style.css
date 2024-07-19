@@ -157,6 +157,7 @@ body {
 }
 
 #header {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -303,7 +304,11 @@ body {
   color: #aaa;
 }
 
+.sc-intro {
+  height: 800vh;
+}
 .sc-intro .sticky {
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
@@ -325,16 +330,21 @@ body {
   z-index: 20;
 }
 .sc-intro .sticky .intro-title {
-  visibility: hidden;
+  position: relative;
+  height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 300px;
 }
-.sc-intro .sticky .intro-title span {
+.sc-intro .sticky .intro-title > span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -343,18 +353,24 @@ body {
   font-size: 10rem;
   will-change: transform;
 }
-.sc-intro .sticky .intro-title span:nth-child(1n) {
+.sc-intro .sticky .intro-title > span:not(:first-child) {
+  visibility: hidden;
+}
+.sc-intro .sticky .intro-title > span:first-child {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.sc-intro .sticky .intro-title > span:nth-child(3) {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.sc-intro .sticky .intro-title span:nth-child(2n) {
+.sc-intro .sticky .intro-title > span:nth-child(2n) {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-.sc-intro .sticky .intro-logo {
-  visibility: hidden;
 }
 .sc-intro .sticky .intro-logo img {
   max-width: 564px;
@@ -364,18 +380,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: NaverBD, sans-serif;
   font-weight: 700;
 }
-.sc-intro .sticky .intro-description .desc {
+.sc-intro .sticky .intro-description .desc-wrap .desc {
   max-width: 564px;
   margin-bottom: 2.5rem;
   padding: 0 32px;
   font-size: 1.5rem;
   line-height: 1.67;
-  opacity: 0.1;
+  opacity: 0;
 }
-.sc-intro .sticky .intro-description a {
+.sc-intro .sticky .intro-description .desc-wrap .link-box {
+  opacity: 0;
+}
+.sc-intro .sticky .intro-description .desc-wrap .link-box a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -388,37 +413,40 @@ body {
   max-width: 440px;
   width: 100%;
   height: 4rem;
+  margin: 0 32px;
   padding: 0 1.625rem 0 1.75rem;
-  margin-top: 3.875rem;
   border: 3px solid #fff;
   border-radius: 3.25rem;
   background-color: rgba(0, 0, 0, 0.2);
   font-size: 1.25rem;
   -webkit-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
-  opacity: 0.1;
 }
-.sc-intro .sticky .intro-description a::after {
+.sc-intro .sticky .intro-description .desc-wrap .link-box a::after {
   content: "";
   width: 1.5rem;
   height: 1.5rem;
   background-image: url(/assets/images/btn-more.svg);
 }
-.sc-intro .sticky .intro-description .link-brand:hover {
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-brand {
+  margin-top: 3.875rem;
+}
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-brand:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
-.sc-intro .sticky .intro-description .link-story {
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-story {
+  margin-top: 1.75rem;
   background-color: #fff;
   color: #000;
 }
-.sc-intro .sticky .intro-description .link-story::after {
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-story::after {
   background-image: url(/assets/images/btn-anchor.svg);
 }
-.sc-intro .sticky .intro-description .link-story:hover {
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-story:hover {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
 }
-.sc-intro .sticky .intro-description .link-story:hover::after {
+.sc-intro .sticky .intro-description .desc-wrap .link-box .link-story:hover::after {
   background-image: url(/assets/images/btn-more.svg);
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -439,16 +467,13 @@ body {
 .sc-intro .sticky .scroll-down {
   width: 2.5rem;
   height: 2.5rem;
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: 1.5rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-.sc-innovation {
-  height: 1000vh;
-}
 .sc-innovation .sticky [class*=sequence-] {
   display: -webkit-box;
   display: -ms-flexbox;

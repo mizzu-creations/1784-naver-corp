@@ -65,10 +65,10 @@ export const scrollInnovationCanvas = () => {
     snap: "frame",
     ease: "none",
     scrollTrigger: {
-      scrub: 0.5,
+      scrub: 1,
       trigger: ".sc-innovation",
       start: "top top",
-      end: "250% top",
+      end: "bottom bottom",
     },
     onUpdate: render,
   });
@@ -77,9 +77,7 @@ export const scrollInnovationCanvas = () => {
 
   ScrollTrigger.create({
     trigger: ".sc-innovation",
-    pin: true,
     start: "top top",
-    end: "250% top",
-    markers: true,
+    end: "bottom bottom",
   });
 };

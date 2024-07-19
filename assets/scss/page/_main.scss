@@ -1,7 +1,8 @@
 // section intro 영역
 .sc-intro {
+  height: 800vh;
   .sticky {
-    // border: 10px solid #0f0;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     [class*="sequence-"] {
@@ -16,10 +17,13 @@
       z-index: 20;
     }
     .intro-title {
-      visibility: hidden;
+      position: relative;
+      height: 100vh;
       flex-direction: column;
-      span {
+      padding-top: 300px;
+      > span {
         display: flex;
+        justify-content: center;
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
@@ -27,71 +31,93 @@
         font-weight: 800;
         font-size: 10rem;
         will-change: transform;
-        &:nth-child(1n) {
+        &:not(:first-child) {
+          visibility: hidden;
+        }
+        &:first-child {
+          max-width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+        }
+        &:nth-child(3) {
           justify-content: flex-start;
         }
         &:nth-child(2n) {
           justify-content: flex-end;
         }
       }
+      // &.active {
+      //   span {
+      //     display: flex;
+
+      //   }
+      // }
     }
     .intro-logo {
-      visibility: hidden;
       img {
         max-width: 564px;
       }
     }
     .intro-description {
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       font-family: NaverBD, sans-serif;
       font-weight: 700;
-      .desc {
-        max-width: 564px;
-        margin-bottom: 2.5rem;
-        padding: 0 32px;
-        font-size: 1.5rem;
-        line-height: 1.67;
-        opacity: 0.1;
-      }
-      a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 440px;
-        width: 100%;
-        height: 4rem;
-        padding: 0 1.625rem 0 1.75rem;
-        margin-top: 3.875rem;
-        border: 3px solid #fff;
-        border-radius: 3.25rem;
-        background-color: rgba(0, 0, 0, 0.2);
-        font-size: 1.25rem;
-        transition: background-color 0.3s ease-in-out;
-        opacity: 0.1;
-        &::after {
-          content: "";
-          width: 1.5rem;
-          height: 1.5rem;
-          background-image: url(/assets/images/btn-more.svg);
+      .desc-wrap {
+        .desc {
+          max-width: 564px;
+          margin-bottom: 2.5rem;
+          padding: 0 32px;
+          font-size: 1.5rem;
+          line-height: 1.67;
+          opacity: 0;
         }
-      }
-      .link-brand {
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.6);
-        }
-      }
-      .link-story {
-        background-color: #fff;
-        color: #000;
-        &::after {
-          background-image: url(/assets/images/btn-anchor.svg);
-        }
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.6);
-          color: #fff;
-          &::after {
-            background-image: url(/assets/images/btn-more.svg);
-            transform: rotate(90deg);
+        .link-box {
+          opacity: 0;
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 440px;
+            width: 100%;
+            height: 4rem;
+            margin: 0 32px;
+            padding: 0 1.625rem 0 1.75rem;
+            border: 3px solid #fff;
+            border-radius: 3.25rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            font-size: 1.25rem;
+            transition: background-color 0.3s ease-in-out;
+            &::after {
+              content: "";
+              width: 1.5rem;
+              height: 1.5rem;
+              background-image: url(/assets/images/btn-more.svg);
+            }
+          }
+          .link-brand {
+            margin-top: 3.875rem;
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.6);
+            }
+          }
+          .link-story {
+            margin-top: 1.75rem;
+            background-color: #fff;
+            color: #000;
+            &::after {
+              background-image: url(/assets/images/btn-anchor.svg);
+            }
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.6);
+              color: #fff;
+              &::after {
+                background-image: url(/assets/images/btn-more.svg);
+                transform: rotate(90deg);
+              }
+            }
           }
         }
       }
@@ -111,7 +137,7 @@
     .scroll-down {
       width: 2.5rem;
       height: 2.5rem;
-      position: absolute;
+      position: fixed;
       left: 50%;
       bottom: 1.5rem;
       transform: translateX(-50%);
@@ -120,7 +146,7 @@
 }
 // section innovation 영역
 .sc-innovation {
-  height: 1000vh;
+  // height: 1000vh;
   .sticky {
     // border: 10px solid #f0f;
     [class*="sequence-"] {
