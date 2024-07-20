@@ -60,24 +60,27 @@ export const scrollInnovationCanvas = () => {
   }
 
   // 애니메이션 설정
-  gsap.to(imageSeq, {
+  const animation = gsap.to(imageSeq, {
     frame: frameCount - 1,
     snap: "frame",
     ease: "none",
     scrollTrigger: {
       scrub: 1,
       trigger: ".sc-innovation",
-      start: "top top",
+      start: "47% top",
       end: "bottom bottom",
+      onEnter: () => {
+        $("#header").addClass("dark");
+      },
+      onLeaveBack: () => {
+        $("#header").removeClass("dark");
+      },
     },
     onUpdate: render,
   });
 
   images[0].onload = render;
 
-  ScrollTrigger.create({
-    trigger: ".sc-innovation",
-    start: "top top",
-    end: "bottom bottom",
-  });
+  // ScrollTrigger 객체 반환
+  return animation.scrollTrigger;
 };

@@ -146,10 +146,10 @@
 }
 // section innovation 영역
 .sc-innovation {
-  // height: 1000vh;
+  height: 1400vh;
   .sticky {
-    // border: 10px solid #f0f;
     [class*="sequence-"] {
+      visibility: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -164,18 +164,15 @@
       z-index: 1;
     }
     .innovation-title {
-      // visibility: hidden;
       span {
         font-weight: 800;
-        font-size: 3.25rem;
+        font-size: 7.5rem;
         line-height: 1.44;
         white-space: nowrap;
-        transform-origin: top left;
       }
     }
     .innovation-sub-title {
-      visibility: hidden;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: #000;
       strong {
         width: 100%;
         max-width: calc(100% - 4rem);
@@ -200,25 +197,44 @@
         line-height: 1.67;
       }
     }
-    .innovation-building {
-      // visibility: hidden;
-      width: 100%;
-      height: 100%;
+    .innovation-building.sequence-04 {
+      width: 25%;
+      height: 0;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: #fff;
       overflow: hidden;
-      canvas {
+      img {
+        width: 100%;
         height: 100vh;
+        object-fit: cover;
       }
     }
-    .innovation-background {
-      position: absolute;
-      top: 0;
+  }
+  .innovation-building.sequence-05 {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    canvas {
+      width: 100vw;
       height: 100vh;
-      overflow: hidden;
+      max-width: none;
+    }
+  }
+  .innovation-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    img {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
   }
 }

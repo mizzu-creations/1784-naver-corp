@@ -1,5 +1,5 @@
 #header {
-  display: none;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +10,7 @@
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)
   );
+  transition: all 0.3s;
   z-index: 100;
   .inner {
     display: flex;
@@ -18,44 +19,62 @@
     padding: 0 6.25rem;
     color: #fff;
     font-family: Testbed;
-    .header-logo {
-      padding: 1rem 0;
-      font-size: 1.125rem;
-      font-weight: 800;
-      line-height: 1.78;
+  }
+  .header-logo {
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 1.78;
+  }
+  .header-gnb {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .link-story {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 4.5rem;
+    height: 2.25rem;
+    border: 1px solid #fff;
+    border-radius: 1.125rem;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #fff;
+      color: #000;
     }
-    .header-gnb {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      .link-story {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 4.5rem;
-        height: 2.25rem;
-        border: 1px solid #fff;
-        border-radius: 1.125rem;
-        background-color: transparent;
-        font-weight: 700;
-        font-size: 0.875rem;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-          background-color: #fff;
-          color: #000;
-        }
-      }
-      .select-language {
-        display: flex;
-        align-items: center;
-        font-weight: 800;
-        span {
-          margin: 0 0.3125rem 0 0.1875rem;
-        }
-        svg {
-          fill: #fff;
-        }
-      }
+  }
+  .select-language {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    span {
+      margin: 0 0.3125rem 0 0.1875rem;
+    }
+    svg {
+      fill: #fff;
+    }
+  }
+}
+
+#header.dark {
+  .inner {
+    color: #000;
+  }
+  .link-story {
+    border: 1px solid #000;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .select-language {
+    svg {
+      fill: #000;
     }
   }
 }

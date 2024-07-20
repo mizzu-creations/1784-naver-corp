@@ -1,8 +1,8 @@
 import { scrollInnovationCanvas } from "./scrollInnovationCanvas.js";
 
 $(function () {
-  scrollInnovationCanvas();
-  sectionIntro();
+  // sectionIntro();
+  sectionInnovation();
 });
 
 function sectionIntro() {
@@ -98,7 +98,106 @@ function sectionIntro() {
     start: "top top",
     end: "bottom bottom",
     animation: tlIntro,
-    markers: true,
     scrub: 1,
+  });
+}
+function sectionInnovation() {
+  let yPos;
+  let scrollTriggerCanvas;
+
+  const tlInnovation = gsap.timeline({
+    onUpdate: () => {
+      yPos = -$(".sc-innovation .sequence-04").height();
+      $(".sc-innovation .sequence-03").css("top", `${yPos / 2}px`);
+    },
+  });
+  tlInnovation
+    .to(".sc-innovation .sequence-01", {
+      autoAlpha: 1,
+      duration: 0.2,
+    })
+    .to(".sc-innovation .sequence-01 span", {
+      fontSize: "1200px",
+    })
+    .to(".sc-innovation .sequence-01", {
+      autoAlpha: 0,
+    })
+    .to(".sc-innovation .sequence-02", {
+      autoAlpha: 1,
+    })
+    .from(
+      ".sc-innovation .sequence-02 strong",
+      {
+        y: 1000,
+      },
+      "<"
+    )
+    .to(".sc-innovation .sequence-02 strong", {
+      y: -200,
+      delay: 0.2,
+      duration: 0.2,
+    })
+    .to(".sc-innovation .sequence-02 strong", {
+      autoAlpha: 0,
+      duration: 0.05,
+    })
+    .to(".sc-innovation .sequence-03", {
+      autoAlpha: 1,
+    })
+    .to(".sc-innovation .sequence-03", {
+      y: -144,
+      duration: 0.05,
+    })
+    .set(
+      ".sc-innovation .sequence-04",
+      {
+        autoAlpha: 1,
+      },
+      "<"
+    )
+    .to(".sc-innovation .sequence-04", {
+      height: "40%",
+      duration: 0.2,
+    })
+    .to(".sc-innovation .sequence-04", {
+      width: "100%",
+      height: "100%",
+    })
+    .set(".sc-innovation .sequence-04", {
+      autoAlpha: 0,
+    })
+    .set(
+      ".sc-innovation .sequence-05",
+      {
+        autoAlpha: 1,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-innovation",
+    start: "top top",
+    end: "center center",
+    animation: tlInnovation,
+    invalidateOnRefresh: true,
+    scrub: 1,
+    onEnter: () => {
+      gsap.to("#header", {
+        autoAlpha: 1,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to("#header", {
+        autoAlpha: 0,
+      });
+    },
+    onEnterBack: () => {
+      if (scrollTriggerCanvas) {
+        scrollTriggerCanvas.kill();
+      }
+    },
+    onLeave: () => {
+      scrollTriggerCanvas = scrollInnovationCanvas();
+    },
   });
 }
