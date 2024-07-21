@@ -68,7 +68,7 @@ export const scrollInnovationCanvas = () => {
       scrub: 1,
       trigger: ".sc-innovation",
       start: "47% top",
-      end: "bottom bottom",
+      end: "bottom top",
       onEnter: () => {
         $("#header").addClass("dark");
       },

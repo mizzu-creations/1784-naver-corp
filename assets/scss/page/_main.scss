@@ -214,7 +214,7 @@
     }
   }
   .innovation-building.sequence-05 {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
@@ -240,12 +240,14 @@
 }
 // slide 영역 (section tech, new normal, eco, with)
 .flex.slide {
-  // height: 600vh;
+  height: 1200vh;
+  z-index: 1;
   .sticky {
-    // border: 10px solid #00f;
     display: flex;
     align-items: center;
     gap: 18.75rem;
+    z-index: 10;
+    background-color: #000;
     section {
       position: relative;
       flex-shrink: 0;
@@ -412,41 +414,65 @@
       }
     }
     .sc-tech {
-      margin-left: 90px;
+      padding-left: 10rem;
     }
-    .marquee {
-      width: 60px;
-      height: 100vh;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      z-index: 10;
-      background-image: linear-gradient(0deg, #ee7f31, #ff3973);
-      color: #000;
-      overflow: hidden;
-      &-inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        transform: rotate(270deg);
+    .sc-with {
+      padding-right: 6.25rem;
+    }
+    .sc-newnormal,
+    .sc-eco,
+    .sc-with {
+      [class*="-title"] {
+        color: #000;
       }
-      &-item {
+      .slide-intro {
+        color: #000;
+      }
+    }
+  }
+  .marquee {
+    width: 60px;
+    height: 100vh;
+    position: static;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-image: linear-gradient(0deg, #002aff, #7427ff);
+    color: #fff;
+    overflow: hidden;
+    &-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      transform: rotate(270deg);
+    }
+    &-item {
+      display: flex;
+      gap: 1.4rem;
+      span {
         display: flex;
-        gap: 1.4rem;
+        align-items: center;
+        gap: 1.2rem;
+        font-family: Testbed;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: 800;
+        white-space: nowrap;
+        &::after {
+          content: "";
+          width: 2.75rem;
+          height: 1.75rem;
+          padding: 0 1.875rem 0 2.25rem;
+          background: url(/assets/images/icon-arrow-white-pc.svg) no-repeat 50%;
+        }
+      }
+    }
+    &.dark {
+      color: #000;
+      .marquee-item {
         span {
-          display: flex;
-          align-items: center;
-          gap: 1.2rem;
-          font-family: Testbed;
-          font-size: 1.5rem;
-          line-height: 1;
-          font-weight: 800;
           &::after {
-            content: "";
-            width: 2.75rem;
-            height: 1.75rem;
-            padding: 0 1.875rem 0 2.25rem;
             background: url(/assets/images/icon-arrow-black-pc.svg) no-repeat
               50%;
           }
