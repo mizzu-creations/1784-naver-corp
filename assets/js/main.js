@@ -1,11 +1,5 @@
 import { scrollInnovationCanvas } from "./scrollInnovationCanvas.js";
 
-$(function () {
-  // sectionIntro();
-  // sectionInnovation();
-  sectionMainSlide();
-});
-
 function sectionIntro() {
   const tlIntro = gsap.timeline();
   tlIntro
@@ -212,16 +206,163 @@ function sectionMainSlide() {
 
   sideMarquee.pause();
 
-  const tlSlide = gsap.timeline();
+  const tlSlide = gsap.timeline({
+    ease: "none",
+  });
+
+  let currentX1 = 0;
+  let currentX2 = 0;
+  let currentX3 = 0;
+
+  $(".flex.slide .sticky section").each((index, section) => {
+    const sectionWidth = $(section).width();
+    const slideWidth = $(".flex.slide .sticky").width();
+    const xPercent = (sectionWidth / slideWidth) * 100;
+
+    if (index === 0) {
+      currentX1 = xPercent;
+    } else if (index === 1) {
+      currentX2 = xPercent;
+    } else if (index === 2) {
+      currentX3 = xPercent;
+    }
+  });
+
   tlSlide
-    .set(".flex.slide .marquee", { xPercent: -100 })
+    .set(".flex.slide .marquee", {
+      xPercent: -100,
+      onStart: () => {
+        $(".marquee-item .uppercase").text("tech");
+        $(".marquee").removeClass("dark");
+      },
+    })
+    .to(".flex.slide .sticky", {
+      xPercent: -(currentX1 / 2),
+      x: 80,
+      delay: 0.1,
+    })
+    .set(".sc-tech .tech-title", { autoAlpha: 0 }, "<")
+    .to(".flex.slide .sticky", {
+      xPercent: -currentX1,
+      x: 280,
+      delay: 0.1,
+    })
+    .set(".slide-title", { autoAlpha: 0 })
+    .set(
+      ".sc-tech .tech-title",
+      { display: "flex", justifyContent: "flex-end" },
+      "<"
+    )
+    .to(".flex.slide .sticky", {
+      xPercent: -currentX1,
+      x: -300,
+    })
+    .to(".flex.slide .sticky", {
+      xPercent: -(currentX1 + currentX2),
+      x: 435,
+      duration: 2,
+      onStart: () => {
+        $(".slide-title").text("new normal");
+        $(".slide-title").css("color", "#000");
+        $(".marquee-item .uppercase").text("new normal");
+        $(".marquee").css(
+          "background-image",
+          "linear-gradient(0deg, #D6FE51, #68D840)"
+        );
+        $(".marquee").addClass("dark");
+      },
+    })
+    .set(
+      ".slide-title",
+      {
+        autoAlpha: 1,
+      },
+      "<"
+    )
+    .set(".sc-newnormal .newnormal-title", { autoAlpha: 0 }, "<")
+    .to(".flex.slide .sticky", {
+      xPercent: -(currentX1 + currentX2),
+      x: -580,
+    })
+    .set(".slide-title", { autoAlpha: 0 }, "<")
+    .set(
+      ".sc-newnormal .newnormal-title",
+      {
+        display: "flex",
+        justifyContent: "flex-end",
+        color: "#000",
+        autoAlpha: 1,
+      },
+      "<"
+    )
+    .to(".flex.slide .sticky", {
+      xPercent: -(currentX1 + currentX2 + currentX3),
+      x: -400,
+      duration: 2,
+      onStart: () => {
+        $(".slide-title").text("eco");
+      },
+    })
+    .set(".slide-title", { autoAlpha: 1 }, "<")
+    .set(
+      ".sc-eco .eco-title",
+      {
+        autoAlpha: 0,
+      },
+      "<"
+    )
     .to(".flex.slide .sticky", {
       xPercent: -100,
       x: () => {
         return window.innerWidth;
       },
-      delay: 0.05,
-    });
+      onComplete: () => {
+        $(".flex.slide .sticky section > .title").css("position", "static");
+      },
+    })
+    .set(".slide-title", { autoAlpha: 0 }, "<")
+    .set(
+      ".sc-eco .eco-title",
+      {
+        display: "flex",
+        justifyContent: "flex-end",
+        color: "#000",
+        autoAlpha: 1,
+      },
+      "<"
+    );
+
+  // tlSlide
+  // .to(".flex.slide .sticky", {
+  //   xPercent: currentX,
+  //   duration: 1,
+  //   ease: "none",
+  //   onComplete: () => {
+  //     // 섹션에 도달했을 때 멈추기 위한 지연
+  //     gsap.to(".flex.slide .sticky", {
+  //       duration: 1,
+  //       xPercent: currentX,
+  //       ease: "none",
+  //       delay: 1 // 각 섹션에서 멈추는 시간 조정
+  //     });
+  //   }
+  // });
+  // .to(".flex.slide .sticky", {
+  //   xPercent: -25,
+  //   delay: 0.05,
+  // })
+  // .to(".flex.slide .sticky", {
+  //   xPercent: -50,
+  //   delay: 0.05,
+  // })
+  // .to(".flex.slide .sticky", {
+  //   xPercent: -75,
+  //   delay: 0.05,
+  // })
+  // .to(".flex.slide .sticky", {
+  //   xPercent: -100,
+  //   delay: 0.05,
+  // });
   // .set(".sc-innovation", { autoAlpha: 0 });
 
   ScrollTrigger.create({
@@ -229,7 +370,8 @@ function sectionMainSlide() {
     start: "top top",
     end: "bottom bottom",
     animation: tlSlide,
-    markers: true,
+    invalidateOnRefresh: true,
+    // markers: true,
     scrub: 1,
     onEnter: () => {
       setHeaderStyle(false);
@@ -248,9 +390,9 @@ function sectionMainSlide() {
     onUpdate: ({ progress }) => {
       const updateBackgroundImage = (progress) => {
         let colorValue;
-        if (progress >= 0.2 && progress <= 0.3) {
-          colorValue = Math.floor((255 * (progress - 0.2)) / 0.1);
-        } else if (progress < 0.2) {
+        if (progress >= 0.25 && progress <= 0.45) {
+          colorValue = Math.floor((255 * (progress - 0.3)) / 0.1);
+        } else if (progress < 0.25) {
           colorValue = 0;
         } else {
           colorValue = 255;
@@ -264,29 +406,22 @@ function sectionMainSlide() {
       updateBackgroundImage(progress);
 
       // 추후 autoAlpha로 개선
-      if (progress < 0.36) {
-        $(".marquee-item .uppercase").text("tech");
-        $(".marquee").removeClass("dark");
-      } else if (progress >= 0.36 && progress < 0.59) {
-        $(".marquee-item .uppercase").text("new normal");
-        $(".marquee").css(
-          "background-image",
-          "linear-gradient(0deg, #D6FE51, #68D840)"
-        );
-        $(".marquee").addClass("dark");
-      } else if (progress >= 0.59 && progress < 0.95) {
-        $(".marquee-item .uppercase").text("eco");
-        $(".marquee").css(
-          "background-image",
-          "linear-gradient(0deg, #00D543, #0CACFF)"
-        );
-      } else if (progress >= 0.95) {
-        $(".marquee-item .uppercase").text("with");
-        $(".marquee").css(
-          "background-image",
-          "linear-gradient(0deg, #EE7F31, #FF3973)"
-        );
-      }
+      // if (progress < 0.36) {
+
+      // } else if (progress >= 0.36 && progress < 0.59) {
+      // } else if (progress >= 0.59 && progress < 0.95) {
+      //   $(".marquee-item .uppercase").text("eco");
+      //   $(".marquee").css(
+      //     "background-image",
+      //     "linear-gradient(0deg, #00D543, #0CACFF)"
+      //   );
+      // } else if (progress >= 0.95) {
+      //   $(".marquee-item .uppercase").text("with");
+      //   $(".marquee").css(
+      //     "background-image",
+      //     "linear-gradient(0deg, #EE7F31, #FF3973)"
+      //   );
+      // }
     },
   });
 
@@ -326,3 +461,43 @@ function sectionMainSlide() {
     }
   };
 }
+function sectionChallenge() {
+  const videoItems = gsap.utils.toArray(".sc-challenge .video-item");
+  const groups = [
+    [videoItems[0], videoItems[3]],
+    [videoItems[1], videoItems[4]],
+    [videoItems[2], videoItems[5]],
+  ];
+
+  gsap.set(".sc-challenge .video-item", { autoAlpha: 0 });
+
+  const tlChallenge = gsap.timeline({ paused: true });
+  groups.forEach((item, index) => {
+    tlChallenge.fromTo(
+      item,
+      { autoAlpha: 0, y: 20 },
+      { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" },
+      index * 0.3
+    );
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sc-challenge",
+    start: "top 35%",
+    end: "bottom bottom",
+    onEnter: () => {
+      tlChallenge.play();
+    },
+  });
+}
+function sectionContact() {
+  // sc-contact
+}
+
+$(function () {
+  // sectionIntro();
+  // sectionInnovation();
+  sectionMainSlide();
+  sectionChallenge();
+  sectionContact();
+});

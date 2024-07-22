@@ -596,8 +596,22 @@ body {
 }
 
 .flex.slide {
-  height: 1200vh;
+  height: 2000vh;
   z-index: 1;
+}
+.flex.slide .slide-title {
+  height: 710px;
+  position: fixed;
+  top: 50%;
+  left: 10rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 6.25rem;
+  line-height: 1.1;
+  font-weight: 800;
+  font-family: Testbed;
+  color: #fff;
+  z-index: 100;
 }
 .flex.slide .sticky {
   display: -webkit-box;
@@ -611,7 +625,6 @@ body {
   background-color: #000;
 }
 .flex.slide .sticky section {
-  position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: -webkit-box;
@@ -629,6 +642,7 @@ body {
   left: 50px;
   width: 100%;
   height: 10%;
+  margin-bottom: 2.5rem;
   font-size: 6.25rem;
   line-height: 1.1;
   font-weight: 800;
@@ -770,6 +784,7 @@ body {
   background: url(/assets/images/horizontal-link-arrow.svg) no-repeat 50%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
+  z-index: 1;
 }
 .flex.slide .sticky section .slide-list .slide-item .slide .book {
   display: -webkit-box;
@@ -893,19 +908,17 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 20.25rem 3.75rem 21.5rem;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
 }
 .sc-challenge .flex {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
   max-width: 1240px;
   font-weight: 800;
 }
 .sc-challenge .flex .challenge-title {
   min-width: 300px;
+  padding-right: 6.9rem;
   font-size: 3.5rem;
   line-height: 1.21;
 }
@@ -916,7 +929,7 @@ body {
 .sc-challenge .video-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem 1.125rem;
+  gap: 2.5rem 2.4rem;
   width: 100%;
   max-width: 1240px;
   margin-top: 5.25rem;
@@ -971,6 +984,11 @@ body {
   padding: 0 1rem;
 }
 .sc-challenge .video-list .video-item a .desc strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.375rem;
+}
+.sc-challenge .video-list .video-item a .desc strong span {
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.375rem;
