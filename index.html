@@ -13,6 +13,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <script type="module" src="./assets/js/main.js" defer></script>
   </head>
   <body>
@@ -57,7 +58,7 @@
       </div>
     </header>
     <main id="contents">
-      <!-- <section class="sc-intro">
+      <section class="sc-intro">
         <div class="sticky">
           <h2 class="intro-title sequence-01">
             <span>1784</span>
@@ -106,7 +107,7 @@
             <img src="./assets/images/coach-scroll.svg" alt="scroll down" />
           </div>
         </div>
-      </section> 
+      </section>
       <section class="sc-innovation">
         <div class="sticky">
           <h2 class="innovation-title sequence-01">
@@ -144,9 +145,13 @@
             />
           </div>
         </div>
-      </section>-->
+      </section>
       <div class="flex slide">
-        <div class="marquee">
+        <div
+          class="marquee-01"
+          aria-hidden="true"
+          style="background-image: linear-gradient(0deg, #002aff, #7427ff)"
+        >
           <div class="marquee-inner">
             <div class="marquee-item">
               <span class="uppercase">tech</span>
@@ -171,6 +176,102 @@
               <span class="uppercase">tech</span>
               <span class="uppercase">tech</span>
               <span class="uppercase">tech</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="marquee-02 dark"
+          aria-hidden="true"
+          style="background-image: linear-gradient(0deg, #d6fe51, #68d840)"
+        >
+          <div class="marquee-inner">
+            <div class="marquee-item">
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+            </div>
+            <div class="marquee-item">
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+              <span class="uppercase">new normal</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="marquee-03 dark"
+          aria-hidden="true"
+          style="background-image: linear-gradient(0deg, #00d543, #0cacff)"
+        >
+          <div class="marquee-inner">
+            <div class="marquee-item">
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+            </div>
+            <div class="marquee-item">
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+              <span class="uppercase">eco</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="marquee-04 dark"
+          aria-hidden="true"
+          style="background-image: linear-gradient(0deg, #ee7f31, #ff3973)"
+        >
+          <div class="marquee-inner">
+            <div class="marquee-item">
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+            </div>
+            <div class="marquee-item">
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
+              <span class="uppercase">with</span>
             </div>
           </div>
         </div>
@@ -712,21 +813,27 @@
         </ul>
       </section>
       <section class="sc-contact">
-        <div class="flex">
-          <h2 class="contact-title uppercase">contact</h2>
-          <div class="address-naver">
-            <address>
-              <strong class="building-name">네이버 1784</strong>
-              <p class="address">경기도 성남시 분당구 정자일로 95</p>
-            </address>
-            <address>
-              <strong class="building-name">네이버 그린팩토리</strong>
-              <p class="address">경기도 성남시 분당구 불정로 6</p>
-            </address>
+        <div class="group-content">
+          <div class="flex">
+            <h2 class="contact-title uppercase">contact</h2>
+            <div class="address-naver">
+              <address>
+                <strong class="building-name">네이버 1784</strong>
+                <p class="address">경기도 성남시 분당구 정자일로 95</p>
+              </address>
+              <address>
+                <strong class="building-name">네이버 그린팩토리</strong>
+                <p class="address">경기도 성남시 분당구 불정로 6</p>
+              </address>
+            </div>
           </div>
-        </div>
-        <div class="bg-wrap">
-          <div class="contact-bg"></div>
+          <div class="bg-wrap">
+            <img
+              class="contact-bg"
+              src="./assets/images/contact/pc-img-contact.jpg"
+              alt="네이버 1784 건물"
+            />
+          </div>
         </div>
       </section>
     </main>

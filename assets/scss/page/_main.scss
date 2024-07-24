@@ -240,20 +240,20 @@
 }
 // slide 영역 (section tech, new normal, eco, with)
 .flex.slide {
-  height: 2000vh;
+  height: 1400vh;
   z-index: 1;
   .slide-title {
-    height: 710px;
+    visibility: hidden;
+    height: 731px;
     position: fixed;
     top: 50%;
-    left: 10rem;
+    left: 9.4rem;
     transform: translateY(-50%);
     font-size: 6.25rem;
     line-height: 1.1;
     font-weight: 800;
     font-family: Testbed;
     color: #fff;
-    // border: 10px solid red;
     z-index: 100;
   }
   .sticky {
@@ -266,11 +266,10 @@
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       color: #fff;
       > .title {
-        position: sticky;
-        top: 50px;
-        left: 50px;
+        display: flex;
         width: 100%;
         height: 10%;
         margin-bottom: 2.5rem;
@@ -282,8 +281,6 @@
       [class*="sequence-"] {
         display: flex;
         align-items: flex-end;
-        // height: 50vh;
-        // border: 10px solid red;
       }
       .group-sequence {
         display: flex;
@@ -428,7 +425,11 @@
       }
     }
     .sc-tech {
-      padding-left: 10rem;
+      height: 100vh;
+      padding-left: 10.2rem;
+      .title {
+        color: #fff;
+      }
     }
     .sc-with {
       padding-right: 6.25rem;
@@ -438,30 +439,31 @@
     .sc-with {
       [class*="-title"] {
         color: #000;
+        margin-bottom: 3.8rem;
       }
       .slide-intro {
         color: #000;
       }
     }
   }
-  .marquee {
+
+  > [class*="marquee-"] {
     width: 60px;
     height: 100vh;
     position: static;
     top: 0;
     left: 0;
     z-index: 20;
-    background-image: linear-gradient(0deg, #002aff, #7427ff);
     color: #fff;
     overflow: hidden;
-    &-inner {
+    .marquee-inner {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 1rem;
       transform: rotate(270deg);
     }
-    &-item {
+    .marquee-item {
       display: flex;
       gap: 1.4rem;
       span {
@@ -501,7 +503,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20.25rem 3.75rem 21.5rem;
+  padding: 20.25rem 3.75rem 10rem;
   height: 100%;
   background-color: #fff;
   .flex {
@@ -581,51 +583,43 @@
 }
 // section contact 영역
 .sc-contact {
-  height: 100vh;
   background-color: #fff;
-  // border: 10px solid red;
-  overflow: hidden;
-  .flex {
-    justify-content: space-between;
-    align-items: center;
-    padding: 52px 100px 48px;
-    .contact-title {
-      font-size: 6rem;
-      font-weight: 800;
-      line-height: 1.04;
-      padding: 0 8px 0 0;
-    }
-    .address-naver {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      address {
+  .group-content {
+    .flex {
+      justify-content: space-between;
+      align-items: center;
+      padding: 52px 100px 48px;
+      .contact-title {
+        font-size: 6rem;
+        font-weight: 800;
+        line-height: 1.04;
+        padding: 0 8px 0 0;
+      }
+      .address-naver {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 72px;
-        font-size: 1.25rem;
-        .building-name {
-          font-weight: 800;
-          line-height: 1.8;
-        }
-        .address {
-          line-height: 1.6;
+        flex-direction: column;
+        gap: 8px;
+        address {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 72px;
+          font-size: 1.25rem;
+          .building-name {
+            font-weight: 800;
+            line-height: 1.8;
+          }
+          .address {
+            line-height: 1.6;
+          }
         }
       }
     }
-  }
-  .bg-wrap {
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
-    .contact-bg {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      background: url(/assets/images/contact/pc-img-contact.jpg) no-repeat top /
-        cover;
+    .bg-wrap {
+      .contact-bg {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
