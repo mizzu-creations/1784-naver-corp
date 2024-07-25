@@ -4,7 +4,7 @@ function sectionIntro() {
   const tlIntro = gsap.timeline();
   tlIntro
     .set(".sc-intro .intro-title span:first-child", {
-      fontSize: "994px",
+      fontSize: "840px",
       xPercent: -50,
       yPercent: -50,
     })
@@ -26,10 +26,10 @@ function sectionIntro() {
       fontSize: "160px",
     })
     .to(".sc-intro .intro-title span:first-child", {
-      x: -113,
+      x: -93,
     })
     .to(".sc-intro .intro-title span:first-child", {
-      y: -295,
+      y: -265,
     })
     .to(
       ".sc-intro .sequence-01 span",
@@ -113,22 +113,28 @@ function sectionInnovation() {
     })
     .to(".sc-innovation .sequence-01 span", {
       fontSize: "1200px",
+      delay: 0.1,
     })
     .to(".sc-innovation .sequence-01", {
       autoAlpha: 0,
     })
-    .to(".sc-innovation .sequence-02", {
-      autoAlpha: 1,
-    })
+    .to(
+      ".sc-innovation .sequence-02",
+      {
+        autoAlpha: 1,
+      },
+      "-=0.2"
+    )
     .from(
       ".sc-innovation .sequence-02 strong",
       {
         y: 1000,
+        autoAlpha: 0,
       },
-      "<"
+      "-=0.2"
     )
     .to(".sc-innovation .sequence-02 strong", {
-      y: -200,
+      y: -150,
       delay: 0.2,
       duration: 0.2,
     })
@@ -204,8 +210,9 @@ function sectionMainSlide() {
       ".flex.slide .sticky",
       {
         x: () => {
-          return -($(".sc-tech").width() / 2 - 70);
+          return -($(".sc-tech").width() / 2 - 75);
         },
+        delay: 0.1,
       },
       "-=0.3"
     )
@@ -213,7 +220,7 @@ function sectionMainSlide() {
     .set(".slide-title", { autoAlpha: 1 }, "<")
     .to(".flex.slide .sticky", {
       x: () => {
-        return -($(".sc-tech").width() - 280);
+        return -($(".sc-tech").width() - 290);
       },
       delay: 0.1,
     })
@@ -227,7 +234,7 @@ function sectionMainSlide() {
     })
     .to(".flex.slide .sticky", {
       x: () => {
-        return -($(".sc-tech").width() + $(".sc-newnormal").width() - 430);
+        return -($(".sc-tech").width() + $(".sc-newnormal").width() - 440);
       },
       delay: 0.1,
     })
@@ -247,7 +254,7 @@ function sectionMainSlide() {
     .set(".newnormal-title", { justifyContent: "flex-end", autoAlpha: 1 }, "<")
     .to(".flex.slide .sticky", {
       x: () => {
-        return -($(".sc-tech").width() + $(".sc-newnormal").width() + 610);
+        return -($(".sc-tech").width() + $(".sc-newnormal").width() + 600);
       },
       delay: 0.1,
     })
@@ -268,20 +275,41 @@ function sectionMainSlide() {
           $(".sc-tech").width() +
           $(".sc-newnormal").width() +
           $(".sc-eco").width() +
-          395
+          380
         );
       },
       delay: 0.1,
     })
+    .set(".slide-title", { autoAlpha: 0 })
+    .set(".eco-title", { justifyContent: "flex-end", autoAlpha: 1 }, "<")
+    // .to(".flex.slide .sticky", {
+    //   x: () => {
+    //     return -(
+    //       $(".flex.slide .sticky").innerWidth() -
+    //       window.innerWidth -
+    //       515
+    //     );
+    //   },
+    //   delay: 0.1,
+    // })
     .to(".flex.slide .sticky", {
       x: () => {
         return -($(".flex.slide .sticky").innerWidth() - window.innerWidth);
       },
       delay: 0.1,
     })
-    .set(".slide-title", { autoAlpha: 0 }, "<")
-    .set(".eco-title", { justifyContent: "flex-end", autoAlpha: 1 }, "<")
     .set(".sc-innovation", { autoAlpha: 0 }, "<");
+  // .set(".with-title", { autoAlpha: 0 }, "<")
+  // .set(
+  //   ".slide-title",
+  //   {
+  //     autoAlpha: 1,
+  //     text: {
+  //       value: "with",
+  //     },
+  //   },
+  //   "<"
+  // );
 
   ScrollTrigger.create({
     trigger: ".flex.slide",
@@ -292,20 +320,12 @@ function sectionMainSlide() {
     onEnter: () => {
       setHeaderStyle("black");
       $(".flex.slide > [class*='marquee-']").css("position", "fixed");
-      gsap.set(".flex.slide > [class*='marquee-']", {
-        autoAlpha: 0,
-        xPercent: -100,
-        onComplete: () => {
-          sideMarquee.play();
-          gsap.to(`.flex.slide .marquee-01`, { xPercent: 0, autoAlpha: 1 });
-        },
-      });
+      gsap.set(".flex.slide > [class*='marquee-']", { x: -60, autoAlpha: 0 });
     },
     onLeaveBack: () => {
       setHeaderStyle("transparent");
       gsap.to(`.flex.slide .marquee-01`, {
-        xPercent: -100,
-        autoAlpha: 0,
+        x: -60,
         onComplete: () => {
           $(".flex.slide > [class*='marquee-']").css("position", "static");
           sideMarquee.pause();
@@ -314,60 +334,68 @@ function sectionMainSlide() {
     },
     onEnterBack: () => {
       $(".flex.slide > [class*='marquee-']").css("position", "fixed");
-      gsap.to(`.flex.slide > [class*='marquee-']`, {
-        xPercent: 0,
+      gsap.from(`.flex.slide > [class*='marquee-']`, {
+        x: -60,
         onComplete: () => {
           sideMarquee.play();
         },
       });
+      // gsap.set(".slide-title", {
+      //   position: "fixed",
+      // });
     },
     onLeave: () => {
       gsap.to(`.flex.slide > [class*='marquee-']`, {
-        xPercent: -100,
+        x: -60,
         onComplete: () => {
           $(".flex.slide > [class*='marquee-']").css("position", "static");
           sideMarquee.pause();
         },
       });
+      // gsap.set(".slide-title", {
+      //   position: "absolute",
+      // });
     },
     onUpdate: ({ progress }) => {
+      console.log(progress);
       const changeSideMarquee = (progress) => {
-        if (progress >= 0 && progress < 0.44) {
-          gsap.to(`.flex.slide .marquee-01`, {
-            xPercent: 0,
+        if (progress >= 0 && progress < 0.41) {
+          gsap.set(`.flex.slide .marquee-01`, {
             autoAlpha: 1,
+          });
+          gsap.to(`.flex.slide .marquee-01`, {
+            x: 0,
             duration: 0.2,
           });
-        } else {
-          gsap.to(`.flex.slide .marquee-01`, { autoAlpha: 0, duration: 0.2 });
+          gsap.set(".flex.slide > [class*='marquee-']", { x: 0 });
         }
 
-        if (progress >= 0.44 && progress < 0.72) {
+        if (progress >= 0.41 && progress < 0.65) {
           gsap.to(`.flex.slide .marquee-02`, {
-            xPercent: 0,
             autoAlpha: 1,
             duration: 0.2,
           });
+          gsap.set(".flex.slide > [class*='marquee-']", { x: 0 });
         } else {
           gsap.to(`.flex.slide .marquee-02`, { autoAlpha: 0, duration: 0.2 });
         }
 
-        if (progress >= 0.72 && progress < 0.88) {
+        if (progress >= 0.65 && progress < 0.88) {
           gsap.to(`.flex.slide .marquee-03`, {
-            xPercent: 0,
             autoAlpha: 1,
             duration: 0.2,
           });
+          gsap.set(".flex.slide > [class*='marquee-']", { x: 0 });
         } else {
           gsap.to(`.flex.slide .marquee-03`, { autoAlpha: 0, duration: 0.2 });
         }
 
         if (progress >= 0.88 && progress <= 1) {
           gsap.to(`.flex.slide .marquee-04`, {
-            xPercent: 0,
             autoAlpha: 1,
             duration: 0.2,
           });
+          gsap.set(".flex.slide > [class*='marquee-']", { x: 0 });
         } else {
           gsap.to(`.flex.slide .marquee-04`, {
             autoAlpha: 0,
@@ -376,25 +404,24 @@ function sectionMainSlide() {
         }
       };
       const changeHeaderStyle = (progress) => {
-        if (progress < 0.23) {
+        if (progress < 0.21) {
           setHeaderStyle("black");
-        } else if (progress >= 0.23 && progress < 1) {
+        } else if (progress >= 0.21 && progress < 1) {
           setHeaderStyle("white");
         } else if (progress >= 1) {
           setHeaderStyle("transparent");
         }
       };
-      const updateBackgroundImage = (progress) => {
+      const updateBgColor = (progress) => {
         let colorValue;
 
-        if (progress >= 0.2 && progress <= 0.52) {
-          colorValue = Math.floor((255 * (progress - 0.2)) / 0.25);
-        } else if (progress < 0.2) {
+        if (progress >= 0.17 && progress <= 0.41) {
+          colorValue = Math.floor((255 * (progress - 0.17)) / 0.2);
+        } else if (progress < 0.17) {
           colorValue = 0;
         } else {
           colorValue = 255;
         }
-
         colorValue = Math.min(255, Math.max(0, colorValue));
 
         $(".flex.slide .sticky").css(
@@ -404,7 +431,7 @@ function sectionMainSlide() {
       };
 
       changeSideMarquee(progress);
-      updateBackgroundImage(progress);
+      updateBgColor(progress);
       changeHeaderStyle(progress);
     },
   });
@@ -482,6 +509,8 @@ function sectionContact() {
 }
 
 $(function () {
+  gsap.set(".sc-intro .sticky > *:not(.intro-video)", { autoAlpha: 1 });
+
   sectionIntro();
   sectionInnovation();
   sectionMainSlide();

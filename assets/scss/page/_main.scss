@@ -5,6 +5,9 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
+    > *:not(.intro-video) {
+      visibility: hidden;
+    }
     [class*="sequence-"] {
       display: flex;
       justify-content: center;
@@ -20,7 +23,7 @@
       position: relative;
       height: 100vh;
       flex-direction: column;
-      padding-top: 300px;
+      padding: 210px 0 40px;
       > span {
         display: flex;
         justify-content: center;
@@ -30,6 +33,7 @@
         font-family: Testbed, sans-serif;
         font-weight: 800;
         font-size: 10rem;
+        line-height: 1.1;
         will-change: transform;
         &:not(:first-child) {
           visibility: hidden;
@@ -47,16 +51,11 @@
           justify-content: flex-end;
         }
       }
-      // &.active {
-      //   span {
-      //     display: flex;
-
-      //   }
-      // }
     }
     .intro-logo {
       img {
-        max-width: 564px;
+        max-width: 600px;
+        padding: 64px 140px;
       }
     }
     .intro-description {
@@ -181,6 +180,7 @@
         text-align: center;
         font-weight: 800;
         line-height: 1.25;
+        visibility: hidden;
       }
     }
     .innovation-desc {
@@ -198,7 +198,7 @@
       }
     }
     .innovation-building.sequence-04 {
-      width: 25%;
+      width: 645px;
       height: 0;
       position: absolute;
       top: 50%;
@@ -240,14 +240,16 @@
 }
 // slide 영역 (section tech, new normal, eco, with)
 .flex.slide {
+  position: relative;
   height: 1400vh;
   z-index: 1;
   .slide-title {
     visibility: hidden;
-    height: 731px;
+    // height: 762px;
+    height: 715px;
     position: fixed;
     top: 50%;
-    left: 9.4rem;
+    left: 10.2rem;
     transform: translateY(-50%);
     font-size: 6.25rem;
     line-height: 1.1;
@@ -262,17 +264,19 @@
     gap: 18.75rem;
     z-index: 10;
     background-color: #000;
+    height: 100vh;
     section {
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      height: 90vh;
       color: #fff;
       > .title {
         display: flex;
         width: 100%;
         height: 10%;
-        margin-bottom: 2.5rem;
+        margin-bottom: 4.4rem;
         font-size: 6.25rem;
         line-height: 1.1;
         font-weight: 800;
@@ -425,7 +429,6 @@
       }
     }
     .sc-tech {
-      height: 100vh;
       padding-left: 10.2rem;
       .title {
         color: #fff;
@@ -439,14 +442,12 @@
     .sc-with {
       [class*="-title"] {
         color: #000;
-        margin-bottom: 3.8rem;
       }
       .slide-intro {
         color: #000;
       }
     }
   }
-
   > [class*="marquee-"] {
     width: 60px;
     height: 100vh;

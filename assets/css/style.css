@@ -330,6 +330,9 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
+.sc-intro .sticky > *:not(.intro-video) {
+  visibility: hidden;
+}
 .sc-intro .sticky [class*=sequence-] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -354,7 +357,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 300px;
+  padding: 210px 0 40px;
 }
 .sc-intro .sticky .intro-title > span {
   display: -webkit-box;
@@ -369,6 +372,7 @@ body {
   font-family: Testbed, sans-serif;
   font-weight: 800;
   font-size: 10rem;
+  line-height: 1.1;
   will-change: transform;
 }
 .sc-intro .sticky .intro-title > span:not(:first-child) {
@@ -391,7 +395,8 @@ body {
           justify-content: flex-end;
 }
 .sc-intro .sticky .intro-logo img {
-  max-width: 564px;
+  max-width: 600px;
+  padding: 64px 140px;
 }
 .sc-intro .sticky .intro-description {
   -webkit-box-orient: vertical;
@@ -533,6 +538,7 @@ body {
   text-align: center;
   font-weight: 800;
   line-height: 1.25;
+  visibility: hidden;
 }
 .sc-innovation .sticky .innovation-desc {
   display: -webkit-box;
@@ -554,7 +560,7 @@ body {
   line-height: 1.67;
 }
 .sc-innovation .sticky .innovation-building.sequence-04 {
-  width: 25%;
+  width: 645px;
   height: 0;
   position: absolute;
   top: 50%;
@@ -597,15 +603,16 @@ body {
 }
 
 .flex.slide {
+  position: relative;
   height: 1400vh;
   z-index: 1;
 }
 .flex.slide .slide-title {
   visibility: hidden;
-  height: 731px;
+  height: 715px;
   position: fixed;
   top: 50%;
-  left: 9.4rem;
+  left: 10.2rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 6.25rem;
@@ -625,6 +632,7 @@ body {
   gap: 18.75rem;
   z-index: 10;
   background-color: #000;
+  height: 100vh;
 }
 .flex.slide .sticky section {
   -ms-flex-negative: 0;
@@ -639,6 +647,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 90vh;
   color: #fff;
 }
 .flex.slide .sticky section > .title {
@@ -647,7 +656,7 @@ body {
   display: flex;
   width: 100%;
   height: 10%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4.4rem;
   font-size: 6.25rem;
   line-height: 1.1;
   font-weight: 800;
@@ -823,7 +832,6 @@ body {
   background-size: contain;
 }
 .flex.slide .sticky .sc-tech {
-  height: 100vh;
   padding-left: 10.2rem;
 }
 .flex.slide .sticky .sc-tech .title {
@@ -836,7 +844,6 @@ body {
 .flex.slide .sticky .sc-eco [class*=-title],
 .flex.slide .sticky .sc-with [class*=-title] {
   color: #000;
-  margin-bottom: 3.8rem;
 }
 .flex.slide .sticky .sc-newnormal .slide-intro,
 .flex.slide .sticky .sc-eco .slide-intro,
